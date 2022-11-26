@@ -9,5 +9,8 @@
         <module name="TokenEnchantEcon" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TokenEnchantEcon" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -35,7 +35,7 @@ public class Tokens extends CurrencyModel {
     }
 
     @Override
-    public boolean hasEnough(OfflinePlayer offlinePlayer, long l) {
-        return tokenEnchantAPI.getTokens(offlinePlayer) >= l;
+    public boolean hasEnough(OfflinePlayer offlinePlayer, long amount) {
+        return tokenEnchantAPI.getTokens(offlinePlayer) >= amount;
     }
 }

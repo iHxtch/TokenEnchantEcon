@@ -8,7 +8,7 @@ import com.insurgencenetwork.playershops.settings.Settings;
 import org.jetbrains.annotations.NotNull;
 
 @AddonInfo(author = "Hxtch", name = "TokenEnchantEcon", version = "1.0",
-        description = "Adds TokenEnchant's tokens support to PlayerShops", dependencies = "TokenEnchant")
+        description = "Adds TokenEnchant support to PlayerShops", dependencies = "TokenEnchant")
 public class TokenEnchantEcon extends PlayerShopsAddon {
 
     private static PlayerShopsAddon instance;

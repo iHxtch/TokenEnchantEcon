@@ -6,7 +6,6 @@ import com.insurgencenetwork.playershops.utils.configutils.AddonConfigUtil;
 public class Settings extends YamlConfig {
 
     public static String CURRENCY_TYPE;
-
     public static String CURRENCY_SYMBOL;
 
     public Settings() {
@@ -14,6 +13,7 @@ public class Settings extends YamlConfig {
         loadConfiguration(NO_DEFAULT, "addons/TokenEnchantEcon/tokenenchant-econ-settings.yml");
     }
 
+    @Override
     protected void onLoad() {
         CURRENCY_TYPE = getString("Currency_Type");
         CURRENCY_SYMBOL = getString("Currency_Symbol");
