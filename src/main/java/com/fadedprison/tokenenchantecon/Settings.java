@@ -9,7 +9,7 @@ public class Settings extends YamlConfig {
     public static String CURRENCY_SYMBOL;
 
     public Settings() {
-        AddonConfigUtil.saveResource(TokenEnchantEcon.getInstance(), "", "tokenenchant-econ-settings.yml", "tokenenchant-econ-settings", false);
+        AddonConfigUtil.saveResource(TokenEnchantEcon.getInstance(),"","tokenenchant-econ-settings.yml", "tokenenchant-econ-settings", false);
         loadConfiguration(NO_DEFAULT, "addons/TokenEnchantEcon/tokenenchant-econ-settings.yml");
     }
 

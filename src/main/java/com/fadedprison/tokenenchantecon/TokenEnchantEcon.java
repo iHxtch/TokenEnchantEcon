@@ -4,7 +4,6 @@ import com.fadedprison.tokenenchantecon.currency.Tokens;
 import com.insurgencenetwork.playershops.PlayerShops;
 import com.insurgencenetwork.playershops.api.extension.PlayerShopsAddon;
 import com.insurgencenetwork.playershops.api.extension.annotation.AddonInfo;
-import com.insurgencenetwork.playershops.settings.Settings;
 import org.jetbrains.annotations.NotNull;
 
 @AddonInfo(author = "Hxtch", name = "TokenEnchantEcon", version = "1.0",
