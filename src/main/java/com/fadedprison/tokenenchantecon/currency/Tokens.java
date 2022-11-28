@@ -23,15 +23,27 @@ public class Tokens extends CurrencyModel {
     }
 
     @Override
-    public void sellItem(Player player, PlayerShop playerShop, ShopItem shopItem, SellItemCallback sellItemCallback) {
-        tokenEnchantAPI.removeTokens(player, shopItem.getPrice());
+    public void sellItem(Player buyer, PlayerShop playerShop, ShopItem shopItem, SellItemCallback sellItemCallback) {
+        if (!hasEnough(buyer, shopItem.getPrice().longValue())){
+            sellItemCallback.onSell(false);
+            return;
+        }
+
+        tokenEnchantAPI.removeTokens(buyer, shopItem.getPrice());
         tokenEnchantAPI.addTokens(Bukkit.getOfflinePlayer(playerShop.getOwner()), shopItem.getPrice());
+        sellItemCallback.onSell(true);
     }
 
     @Override
-    public void buyItem(Player player, PlayerShop playerShop, double v, SellItemCallback sellItemCallback) {
-        tokenEnchantAPI.addTokens(player, v);
-        tokenEnchantAPI.removeTokens(Bukkit.getOfflinePlayer(playerShop.getOwner()), v);
+    public void buyItem(Player seller, PlayerShop playerShop, double price, SellItemCallback sellItemCallback) {
+        OfflinePlayer shopOwner = Bukkit.getOfflinePlayer(playerShop.getOwner());
+        if (!hasEnough(shopOwner, (long) price)){
+            sellItemCallback.onSell(false);
+            return;
+        }
+
+        tokenEnchantAPI.addTokens(seller, price);
+        tokenEnchantAPI.removeTokens(shopOwner, price);
     }
 
     @Override
