@@ -44,6 +44,7 @@ public class Tokens extends CurrencyModel {
 
         tokenEnchantAPI.addTokens(seller, price);
         tokenEnchantAPI.removeTokens(shopOwner, price);
+        sellItemCallback.onSell(true);
     }
 
     @Override
